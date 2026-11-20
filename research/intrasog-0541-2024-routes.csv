@@ -12,7 +12,7 @@ operator,official_route_code,official_route_name,route_form,window_start,window_
 "Cootradelsol","2C","Magdalena - Liberia","circular","05:00","20:00","8.89","45","40","3","5","10","hourly_peak_offpeak","14-15",""
 "Cootradelsol","3C","Callejuelas - Laguito","circular","05:00","20:00","20.6","70","65","8","10","10","hourly_peak_offpeak","15-16",""
 "Cootradelsol","4C","Coservicios - Gustavo Jiménez - Ramada","circular","05:00","22:00","25.6","80","75","4","6","10","hourly_peak_offpeak","17-18",""
-"Cootradelsol","5C","Puente Pesca - Límites Aquitania","bidirectional","05:00","20:00","66.9","120","120","","","","fixed_departures","18-19","From Límites Aquitania 05:30, 11:30, 14:00; from Puente Pesca 06:30, 13:30, 16:30. Urban-classified by resolution but crosses into peripheral/rural area; check agreed geographic scope before publication"
+"Cootradelsol","5C","Puente Pesca - Límites Aquitania","bidirectional","05:00","20:00","66.9","120","120","","","","fixed_departures","18-19","Two vehicle lists: starting Limites Aquitania: Limites Aquitania 06:30; Puente Pesca 11:30; Limites Aquitania 14:00; Puente Pesca 16:30. Starting Puente Pesca: Puente Pesca 06:30; Limites Aquitania 08:30; Puente Pesca 13:30; Limites Aquitania 16:30. See source PDF pp 18-19. Urban-classified but cross-boundary; scope hold"
 "TransAvella","1TA","Villa del Sol - La Tolva","bidirectional","05:00","22:59","26","90","80","3","5","10","hourly_peak_offpeak","19-20",""
 "TransAvella","2TA","Prado Norte - Vallado - Aposentos","circular","05:00","22:59","25","75","70","4","5","10","hourly_peak_offpeak","20-21",""
 "TransAvella","3TA","Villa del Sol - Ramada - San José de Bolívar","circular","05:00","20:59","22","70","65","8","10","10","hourly_peak_offpeak","21-22",""
