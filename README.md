@@ -24,3 +24,22 @@ Run the Overpass query at [`research/overpass/duitama-sogamoso-bus-routes.overpa
 6. Configure [Trufi GTFS Builder](https://github.com/trufi-association/trufi-gtfs-builder), generate a candidate, then run MobilityData GTFS Validator.
 
 **Data provenance and licensing:** OSM-derived output must retain OpenStreetMap contributors' attribution and comply with ODbL 1.0. OSM tags such as `interval` and `opening_hours` are provisional until verified; route presence is not proof of current operation.
+
+
+## Sogamoso INTRASOG crosswalk (20 November 2026)
+
+The signed [INTRASOG Resolución 0541-2024](https://www.intrasog.gov.co/wp-content/uploads/2024/03/RESOLUCION-0541.pdf) regulates **20** routes (four operators); the OSM snapshot contains **30** urban route relations.
+
+- [Legal route details, service windows and headways](research/intrasog-0541-2024-routes.csv)
+- [Legal-to-OSM candidate crosswalk](research/intrasog-0541-osm-crosswalk-2026-11-20.csv) — 6 strong, 5 partial, 4 partial-conflict, 4 weak, 1 missing/held
+- [Eleven OSM relations not assigned to a legal route](research/sogamoso-osm-unassigned-2026-11-20.csv)
+- [Geometry and discontinuity analysis](research/sogamoso-crosswalk-findings-2026-11-20.md)
+- [Reproducible OSM geometry inventory script](scripts/osm_route_length_inventory.py)
+
+**Do not automatically publish the 20 legal schedules against unverified legacy OSM shapes.** Three existing urban relations have large ordered member-way gaps: LAGO-5, AVELLA-5 and AVELLA-6. Legal route 5C to Límites Aquitania is on an explicit scope hold because the current project excludes intercity services.
+
+To reproduce the way lengths and topological screening from a fresh raw Overpass export:
+
+```bash
+python scripts/osm_route_length_inventory.py path/to/export.json > urban-route-metrics.csv
+```
