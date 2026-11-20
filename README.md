@@ -43,3 +43,10 @@ To reproduce the way lengths and topological screening from a fresh raw Overpass
 ```bash
 python scripts/osm_route_length_inventory.py path/to/export.json > urban-route-metrics.csv
 ```
+
+## Duitama historic-feed audit (20 November 2026)
+
+- [Historical GTFS vs OSM geometry, stops and legal sources](research/duitama-gtfs-osm-audit-2026-11-20.md)
+- All 52 historic GTFS route IDs were found unchanged in the current OSM export; do **not** infer operation/validity solely from this match.
+- Four route variants (B7 `6594055`, A12 `6585999`, C3 `6594071` and `6594078`) have gaps in ordered OSM way members requiring targeted review.
+- Municipality's **Resolución 3641-2003**, cited in a 2024 court case, is now a priority legal schedule source; keep published individual route windows separate from the historical feed's placeholder five-minute frequencies and OSM's uniform fifteen-minute tags.
