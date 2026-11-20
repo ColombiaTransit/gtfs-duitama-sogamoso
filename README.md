@@ -1,18 +1,26 @@
 # GTFS Duitama–Sogamoso (Colombia)
 
-Open-source research and reproducible GTFS preparation for urban and intermunicipal bus services around Duitama and Sogamoso, Boyacá.
+Open-source research and reproducible GTFS preparation for **urban bus services only** in Duitama and Sogamoso, Boyacá.
+
+## Current scope (2026-11-20)
+
+The uploaded Overpass export contains **105 bus route relations**. Based on their literal OSM `network` tags, **82** are in scope:
+
+- **Duitama: 52 route relations** — 49 with `network=Urbano Duitama` plus 3 with `network=Servicio de Transporte Urbano Duitama`. Operators: Tundama 26, Cootraheroes 14, Tures 12.
+- **Sogamoso: 30 route relations** — `network=Urbano Sogamoso`. Operators: TransLago 9, TransAvella 8, Cootradelsol 7, Flota Sugamuxi 6.
+- **Deferred: 23 relations** — 9 `Interurbano Boyacá`, 1 `Transporte Intermunicipal Boyacá`, and 13 lacking a `network` tag. These are **not** included in urban GTFS generation, even when they traverse one or both cities.
+
+See [`research/scope.md`](research/scope.md) for inclusion/exclusion rules. This scope can be revised only upon explicit new evidence or a deliberate project decision. `route_master` relations are not counted as GTFS routes.
 
 ## Research phase: OSM inventory
 
 Run the Overpass query at [`research/overpass/duitama-sogamoso-bus-routes.overpassql`](research/overpass/duitama-sogamoso-bus-routes.overpassql) in [Overpass Turbo](https://overpass-turbo.eu/).
 
 1. Execute the query.
-2. Export **raw OSM JSON** (not GeoJSON), retaining relation membership and OSM tags.
-3. Save the result locally as `osm/duitama-sogamoso-bus-routes.json` for analysis (do not commit the potentially large raw export yet).
-4. Inventory each bus route relation and route master, including OSM id, `ref`, `name`, `operator`, `from`, `to`, stop sequence, direction and geometry.
-5. Compare against the historical GitLab GTFS, keeping route identity and direction separate.
-6. Only after comparison, configure [Trufi GTFS Builder](https://github.com/trufi-association/trufi-gtfs-builder) and validate its output using MobilityData GTFS Validator.
+2. Export **raw OSM JSON** (not GeoJSON), retaining relation member order and tags.
+3. Save the result locally as `osm/duitama-sogamoso-bus-routes.json` for analysis.
+4. Apply the urban scope before generation. Keep regional relations in the research register, not in the published feed.
+5. Compare the 52 Duitama OSM relations against the historical GitLab GTFS and inspect Sogamoso route directions/stops.
+6. Configure [Trufi GTFS Builder](https://github.com/trufi-association/trufi-gtfs-builder), generate a candidate, then run MobilityData GTFS Validator.
 
-**Scope:** The query uses an approximate bounding box around Duitama and Sogamoso and may return regional routes. A route intersecting the box is included in full; inclusion in OSM does not independently establish current operation or legal validity.
-
-**Data provenance and licensing:** OSM-derived output must retain OpenStreetMap contributors' attribution and comply with ODbL 1.0. Do not treat assumed headways or operating windows as verified schedules.
+**Data provenance and licensing:** OSM-derived output must retain OpenStreetMap contributors' attribution and comply with ODbL 1.0. OSM tags such as `interval` and `opening_hours` are provisional until verified; route presence is not proof of current operation.
