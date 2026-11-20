@@ -1,12 +1,14 @@
-[out:json][timeout:180];
+[out:json][timeout:240];
 
-// Approximate regional bounding box: Duitama–Sogamoso, Boyacá, Colombia.
-// Routes that intersect the bbox may extend well beyond its limits.
-// Fetch route relations and route_master relations plus their full
-// recursive members (ordered relation members are preserved).
+// Duitama and Sogamoso, Boyacá, Colombia.
+// Enlarged regional bbox (south,west,north,east):
+// 5.55,-73.22,6.05,-72.73
+// Encompasses mapped municipal extents plus a buffer.
+// Relations intersecting the bbox may extend well outside it.
+// Export raw OSM JSON to retain relation member order and tags.
 (
-  relation["type"="route"]["route"="bus"](5.65,-73.13,5.91,-72.82);
-  relation["type"="route_master"]["route_master"="bus"](5.65,-73.13,5.91,-72.82);
+  relation["type"="route"]["route"="bus"](5.55,-73.22,6.05,-72.73);
+  relation["type"="route_master"]["route_master"="bus"](5.55,-73.22,6.05,-72.73);
 )->.routes;
 
 (
