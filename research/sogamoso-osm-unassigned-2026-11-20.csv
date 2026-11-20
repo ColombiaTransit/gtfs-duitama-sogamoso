@@ -1,0 +1,12 @@
+operator,osm_ref,osm_relation_id,osm_name,osm_way_length_km,status,reason
+"Cootradelsol","SOL-2","15851156","UPTC–Asodea","5.13","No one-to-one match to 0541 codes","Do not confuse with official 2C Magdalena–Liberia, which matches SOL-3"
+"Cootradelsol","SOL-4","14668947","Asodea–Prado Norte","7.8","Not yet assigned","May overlap the new restructured circulation; geometry comparison needed"
+"Cootradelsol","SOL-7","14592073","Libertador–Laguito","10.32","Not yet assigned","Possibly older separate corridor"
+"Flota Sugamuxi","SUGA-4","15851206","Libertador Centro–Nogal","11.02","Not equivalent to legal 4FS Cementerio–Pedregal","OSM same number is misleading"
+"Flota Sugamuxi","SUGA-6","14618145","Sugamuxi–Prado Norte","11.67","Not yet assigned","May represent old pattern"
+"TransAvella","AVELLA-5","14534203","Libertador–José Antonio Galán","21.16","Not yet assigned","OSM fixme direction ambiguous and a 5.30 km topology gap"
+"TransAvella","AVELLA-7","14635129","Vallado–La Tolva","32.31","Not yet assigned","Could intersect parts of 2TA/6TA; do not force fit"
+"TransLago","LAGO-1","15798102","Rosario–Villa del Sol","9.58","Not yet assigned","Official 1TL likely corresponds to old LAGO-2 instead"
+"TransLago","LAGO-6","14557470","La Isla–Libertador","8.64","Not yet assigned","Older city circulation may be superseded or still active; verify"
+"TransLago","LAGO-7","14591957","Plaza de Mercado–Pantanitos","11.2","Not yet assigned","No unambiguous current 0541 correspondence"
+"TransLago","LAGO-8","15851286","Chinca–Nogal","10.43","Not yet assigned","No unambiguous current 0541 correspondence"
